@@ -6,36 +6,43 @@ namespace Demo {
     class Program {
         //程序入口
         static void Main(string[] args) {
-            //var injection = new InjectionClass();
             ContainerBuilder builder = new ContainerBuilder();
             builder.RegisterType<InterfaceAndImpl.Impl.DemoService>().As<IDemoService>().PropertiesAutowired().InstancePerLifetimeScope();
-            builder.Register<InjectionClass>(c => new InjectionClass() { _demoService1 = c.Resolve<IDemoService>() });
+            builder.Register<SetterInjection>(c => new SetterInjection() { _demoService = c.Resolve<IDemoService>() });
+            builder.RegisterType<ConstructorInjection>();
             var container = builder.Build();
-            InjectionClass injectionClass = container.Resolve<InjectionClass>();
-            injectionClass.SayHello1();
-            //injectionClass.SayHello2();
+            SetterInjection setterInjection = container.Resolve<SetterInjection>();
+            setterInjection.SayHello();
+            ConstructorInjection constructorInjection = container.Resolve<ConstructorInjection>();
+            constructorInjection.SayHello();
+
         }
     }
-    internal class InjectionClass {
-        #region 属性注入
-        public IDemoService _demoService1 { set; get; }
-        #endregion
-        #region 构造注入
-        public readonly IDemoService _demoService2;
-        //public InjectionClass(IDemoService demoService) {
-        //    _demoService2 = demoService;
-        //}
-        #endregion
+    #region 属性注入
+    internal class SetterInjection {
 
-        #region 接口注入
+        public IDemoService _demoService { set; get; }
 
-        #endregion
-        public void SayHello1() {
-            Console.WriteLine(_demoService1.SayHello());
+        public void SayHello() {
+            Console.WriteLine(_demoService.SayHello());
         }
-        //public void SayHello2() {
-        //    Console.WriteLine(_demoService2.SayHello());
-        //}
     }
+    #endregion
+
+    #region 构造注入
+    internal class ConstructorInjection {
+        public readonly IDemoService _demoService;
+        public ConstructorInjection(IDemoService demoService) {
+            _demoService = demoService;
+        }
+        public void SayHello() {
+            Console.WriteLine(_demoService.SayHello());
+        }
+    }
+    #endregion
+
+    #region 接口注入
+
+    #endregion
 
 }
