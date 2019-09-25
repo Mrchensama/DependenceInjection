@@ -26,6 +26,10 @@ namespace App {
         /// </summary>
         public static IServiceProvider ServiceProvider { private set; get; }
         /// <summary>
+        /// Container
+        /// </summary>
+        public static IContainer Container { private set; get; }
+        /// <summary>
         /// 服务代理设置
         /// </summary>
         /// <param name="services"></param>
@@ -40,8 +44,6 @@ namespace App {
 
             ////整个应用程序生命周期以内只创建一个实例 
             //services.AddSingleton<IDemoService, DemoService>();
-
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddControllersAsServices();
             ContainerBuilder builder = new ContainerBuilder();
             //新模块组件注册
@@ -49,9 +51,9 @@ namespace App {
             //将services中的服务填充到Autofac中.
             builder.Populate(services);
             //创建容器.
-            var autofacContainer = builder.Build();
+            Container = builder.Build();
             //使用容器创建 AutofacServiceProvider 
-            return new AutofacServiceProvider(autofacContainer);
+            return new AutofacServiceProvider(Container);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

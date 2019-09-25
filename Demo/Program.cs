@@ -8,7 +8,11 @@ namespace Demo {
         static void Main(string[] args) {
             ContainerBuilder builder = new ContainerBuilder();
             builder.RegisterType<InterfaceAndImpl.Impl.DemoService>().As<IDemoService>().PropertiesAutowired().InstancePerLifetimeScope();
+
+            //属性注入
             builder.Register<SetterInjection>(c => new SetterInjection() { _demoService = c.Resolve<IDemoService>() });
+
+
             builder.RegisterType<ConstructorInjection>();
             var container = builder.Build();
             SetterInjection setterInjection = container.Resolve<SetterInjection>();
@@ -45,4 +49,5 @@ namespace Demo {
 
     #endregion
 
+    
 }
