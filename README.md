@@ -29,3 +29,8 @@ https://www.cnblogs.com/fanqisoft/p/10962975.html
 https://www.cnblogs.com/lonelyxmas/p/11055407.html
 https://yq.aliyun.com/articles/700608
 https://www.cnblogs.com/jiagoushi/p/4084145.html
+//服务注册生命周期
+https://www.cnblogs.com/artech/p/asp-net-core-di-life-time.html
+//"两个"ServiceProvider（添加至讲解内容中）
+https://www.cnblogs.com/artech/p/di-asp-net-core-pipeline-1.html
+
