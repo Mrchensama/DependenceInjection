@@ -35,6 +35,7 @@ https://www.cnblogs.com/artech/p/asp-net-core-di-life-time.html
 https://www.cnblogs.com/artech/p/di-asp-net-core-pipeline-1.html
 //以为大佬关于 实例生命周期，实例注册，实例注入应用方面的详细解释（可以借鉴，补充至实例注册，依赖注入，的应用讲解上面）
 https://www.cnblogs.com/RayWang/
+https://www.cnblogs.com/RayWang/p/11165509.html
 //.Net Core 自带IOC的应用先讲，再讲Autofac的
 
 //tengfei
