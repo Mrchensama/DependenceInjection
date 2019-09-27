@@ -8,6 +8,10 @@ namespace InterfaceAndImpl.Impl1 {
     /// Impl 1
     /// </summary>
     public class DemoService : IDemoService {
+        public DemoService( IList<string> Param )
+        {
+
+        }
         /// <summary>
         /// 打印信息
         /// </summary>
