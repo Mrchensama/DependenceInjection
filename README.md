@@ -43,3 +43,8 @@ https://www.cnblogs.com/jesse2013/p/di-in-aspnetcore.html
 
 //An Autofac Lifetime Primer
 https://nblumhardt.com/2011/01/an-autofac-lifetime-primer/
+
+//json配置注册
+https://www.cnblogs.com/geliang/p/5875522.html
+//Autofac 配置文件注册 官方文档
+https://github.com/autofac/Documentation/blob/master/docs/configuration/xml.rst
