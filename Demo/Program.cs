@@ -11,7 +11,10 @@ namespace Demo {
 
             //属性注入
             builder.Register<SetterInjection>(c => new SetterInjection() { _demoService = c.Resolve<IDemoService>() });
+            builder.Register<SetterInjection>(c => new SetterInjection() { _demoService = c.Resolve<IDemoService>() });
 
+            //需要属性注入的类型，注册时设置作为属性为自动注入
+            builder.RegisterType<IDemoService>().PropertiesAutowired();
 
             builder.RegisterType<ConstructorInjection>();
             var container = builder.Build();

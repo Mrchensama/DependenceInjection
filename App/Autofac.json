@@ -1,0 +1,22 @@
+{
+  "defaultAssembly": "InterfaceAndImpl",
+  "components": [
+    {
+      "type": "InterfaceAndImpl.Impl.DemoService, InterfaceAndImpl.Impl",
+      "services": [
+        {
+          "type": "InterfaceAndImpl.Interface.IDemoService"
+        }
+      ],
+      "injectProperties": true
+    },
+    {
+      "type": "InterfaceAndImpl.Impl1.DemoService, InterfaceAndImpl.Impl1",
+      "services": [
+        {
+          "type": "InterfaceAndImpl.Interface.IDemoService"
+        }
+      ]
+    }
+  ]
+}

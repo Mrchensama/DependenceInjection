@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using App.AppStart;
 using Autofac;
+using Autofac.Configuration;
 using Autofac.Extensions.DependencyInjection;
 using InterfaceAndImpl.Impl;
 using InterfaceAndImpl.Interface;
@@ -29,6 +30,7 @@ namespace App {
         /// Container
         /// </summary>
         public static IContainer Container { private set; get; }
+
         /// <summary>
         /// 服务代理设置
         /// </summary>
@@ -46,8 +48,36 @@ namespace App {
             services.AddSingleton<IDemoService, DemoService>();
 
 
+
+
+
+
+
+            // Add the configuration to the ConfigurationBuilder.
+            var config = new ConfigurationBuilder();
+            // config.AddJsonFile comes from Microsoft.Extensions.Configuration.Json
+            // config.AddXmlFile comes from Microsoft.Extensions.Configuration.Xml
+            config.AddJsonFile("autofac.json");
+            config.AddXmlFile("autofac.xml");
+            // Register the ConfigurationModule with Autofac.
+            var module = new ConfigurationModule(config.Build());
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(module);
+
+
+
+
+
+
+
+
+
+
+
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddControllersAsServices();
-            ContainerBuilder builder = new ContainerBuilder();
+            //ContainerBuilder builder = new ContainerBuilder();
             //新模块组件注册
             builder.RegisterModule<DefaultModule>();
             //将services中的服务填充到Autofac中.

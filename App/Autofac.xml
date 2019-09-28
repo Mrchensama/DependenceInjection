@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <autofac defaultAssembly="InterfaceAndImpl">
   <components name="0">
-    <type>Autofac.Example.Calculator.Addition.Add, Autofac.Example.Calculator.Addition</type>
-    <services name="0" type="Autofac.Example.Calculator.Api.IOperation" />
+    <type>InterfaceAndImpl.Impl.DemoService, InterfaceAndImpl.Impl</type>
+    <services name="0" type="InterfaceAndImpl.Interface.IDemoService" />
     <injectProperties>true</injectProperties>
   </components>
   <components name="1">
-    <type>Autofac.Example.Calculator.Division.Divide, Autofac.Example.Calculator.Division</type>
-    <services name="0" type="Autofac.Example.Calculator.Api.IOperation" />
+    <type>InterfaceAndImpl.Impl1.DemoService, InterfaceAndImpl.Impl1</type>
+    <services name="0" type="InterfaceAndImpl.Interface.IDemoService" />
     <injectProperties>true</injectProperties>
-    <parameters>
-      <places>4</places>
-    </parameters>
   </components>
 </autofac>
