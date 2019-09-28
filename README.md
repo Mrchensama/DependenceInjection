@@ -43,3 +43,14 @@ https://www.cnblogs.com/jesse2013/p/di-in-aspnetcore.html
 
 //An Autofac Lifetime Primer
 https://nblumhardt.com/2011/01/an-autofac-lifetime-primer/
+
+//json配置注册
+https://www.cnblogs.com/geliang/p/5875522.html
+//Autofac 配置文件注册 官方文档
+https://github.com/autofac/Documentation/blob/master/docs/configuration/xml.rst
+
+我们可以将WebHost理解为寄宿或者承载Web应用的宿主，应用的启动可以通过启动作为宿主的WebHost来实现。至于WebHostBuilder，顾名思义，就是WebHost的构建者。
+
+//为什么不适用服务定位器
+http://www.matools.com/blog/190787874
+
